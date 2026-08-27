@@ -7,7 +7,7 @@
 
     <title>Slides da Milena Bueno</title>
 
-    <!-- Fontes -->
+    <!-- Fontes utilizadas no projeto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -41,14 +41,16 @@
 ;
             --borda: #76243f
 ;
+            --azul: #77a9ff
+;
         }
 
         body {
             min-height: 100vh;
             overflow: hidden;
 
-            font-family: "Poppins", sans-serif;
             color: var(--texto);
+            font-family: "Poppins", sans-serif;
 
             background:
                 linear-gradient(
@@ -62,8 +64,7 @@
         }
 
         /* =========================================
-           NAVEGAÇÃO COM HTML E CSS
-           Não usamos JavaScript.
+           NAVEGAÇÃO SEM JAVASCRIPT
         ========================================= */
 
         input[type="radio"] {
@@ -71,7 +72,6 @@
         }
 
         .apresentacao {
-            position: relative;
             width: 100%;
             min-height: 100vh;
         }
@@ -86,21 +86,21 @@
 
             width: 100%;
             min-height: 100vh;
-            padding: 70px 8% 120px;
+            padding: 60px 8% 100px;
 
             align-items: center;
             justify-content: center;
             text-align: center;
         }
 
-        /* Mostra somente o slide selecionado */
-        #slide-1:checked ~ .slides .slide-1,
-        #slide-2:checked ~ .slides .slide-2,
-        #slide-3:checked ~ .slides .slide-3,
-        #slide-4:checked ~ .slides .slide-4,
-        #slide-5:checked ~ .slides .slide-5,
-        #slide-6:checked ~ .slides .slide-6,
-        #slide-7:checked ~ .slides .slide-7 {
+        /* Exibe somente o slide selecionado */
+        #slide1:checked ~ .slides .slide1,
+        #slide2:checked ~ .slides .slide2,
+        #slide3:checked ~ .slides .slide3,
+        #slide4:checked ~ .slides .slide4,
+        #slide5:checked ~ .slides .slide5,
+        #slide6:checked ~ .slides .slide6,
+        #slide7:checked ~ .slides .slide7 {
             display: flex;
         }
 
@@ -153,7 +153,7 @@
             margin: 15px 0 10px;
 
             color: var(--rosa-claro);
-            font-size: 1.8rem;
+            font-size: 1.6rem;
         }
 
         p {
@@ -169,14 +169,6 @@
             color: var(--rosa);
         }
 
-        .subtitulo {
-            margin-bottom: 35px;
-
-            color: #d8b9c3
-;
-            font-size: 1.25rem;
-        }
-
         .numero {
             display: block;
             margin-bottom: 15px;
@@ -188,24 +180,17 @@
             text-transform: uppercase;
         }
 
-        /* =========================================
-           CAPA
-        ========================================= */
-
-        .capa .conteudo,
-        .final .conteudo {
-            background:
-                linear-gradient(
-                    rgba(15, 0, 5, 0.75),
-                    rgba(30, 2, 12, 0.95)
-                );
+        .subtitulo {
+            margin-bottom: 30px;
+            color: #d8b9c3
+;
+            font-size: 1.25rem;
         }
 
         .coracao {
             display: block;
-            margin-top: 25px;
-            color: #77a9ff
-;
+            margin: 25px 0;
+            color: var(--azul);
             font-size: 3rem;
         }
 
@@ -229,59 +214,28 @@
             border-radius: 18px;
 
             background: rgba(12, 5, 8, 0.92);
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            transition: 0.3s ease;
         }
 
         .card:hover {
             transform: translateY(-8px);
             border-color: #a8395c
 ;
+            box-shadow: 0 10px 30px rgba(170, 30, 80, 0.2);
         }
 
-        .card .icone {
+        .icone {
             display: block;
             font-size: 2.8rem;
         }
 
         .card h3 {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
         }
 
         .card p {
             font-size: 0.9rem;
             line-height: 1.5;
-        }
-
-        /* =========================================
-           VALORES DO JIU-JITSU
-        ========================================= */
-
-        .valores {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin-top: 35px;
-        }
-
-        .valor {
-            padding: 25px;
-            text-align: left;
-
-            border-left: 4px solid #9b3155
-;
-            border-radius: 15px;
-
-            background: rgba(15, 5, 9, 0.95);
-        }
-
-        .valor h3 {
-            margin-top: 0;
-            font-size: 1.5rem;
-        }
-
-        .valor p {
-            margin-bottom: 0;
-            font-size: 0.95rem;
         }
 
         /* =========================================
@@ -304,14 +258,13 @@
 ;
             border-radius: 30px;
 
-            color: #ffffff
-;
+            color: white;
             background: #542032
 ;
 
             cursor: pointer;
             font-size: 0.95rem;
-            transition: background 0.3s ease, transform 0.3s ease;
+            transition: 0.3s ease;
         }
 
         .botao:hover {
@@ -319,6 +272,10 @@
 ;
             transform: translateY(-3px);
         }
+
+        /* =========================================
+           INDICADORES DOS SLIDES
+        ========================================= */
 
         .indicadores {
             display: flex;
@@ -335,16 +292,21 @@
             background: #693049
 ;
             cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .indicador:hover {
+            background: var(--rosa);
         }
 
         /* Indicador ativo */
-        #slide-1:checked ~ .slides .indicador-1,
-        #slide-2:checked ~ .slides .indicador-2,
-        #slide-3:checked ~ .slides .indicador-3,
-        #slide-4:checked ~ .slides .indicador-4,
-        #slide-5:checked ~ .slides .indicador-5,
-        #slide-6:checked ~ .slides .indicador-6,
-        #slide-7:checked ~ .slides .indicador-7 {
+        #slide1:checked ~ .slides .indicador1,
+        #slide2:checked ~ .slides .indicador2,
+        #slide3:checked ~ .slides .indicador3,
+        #slide4:checked ~ .slides .indicador4,
+        #slide5:checked ~ .slides .indicador5,
+        #slide6:checked ~ .slides .indicador6,
+        #slide7:checked ~ .slides .indicador7 {
             background: var(--rosa);
             transform: scale(1.3);
         }
@@ -364,16 +326,19 @@
         }
 
         @media (max-width: 600px) {
+            body {
+                overflow-y: auto;
+            }
+
             .slide {
-                padding: 35px 15px 100px;
+                padding: 35px 15px 80px;
             }
 
             .conteudo {
                 padding: 30px 18px;
             }
 
-            .cards,
-            .valores {
+            .cards {
                 grid-template-columns: 1fr;
             }
 
@@ -393,54 +358,67 @@
 
     <!-- =========================================
          INÍCIO DA APRESENTAÇÃO
-    ========================================== -->
+    ========================================= -->
 
     <main class="apresentacao">
 
         <!--
-            Estes radio buttons controlam a troca de slides.
-            A navegação funciona somente com HTML e CSS.
+            Os radio buttons controlam a troca dos slides.
+            A apresentação funciona sem JavaScript.
         -->
 
-        <input type="radio" name="slide" id="slide-1" checked>
-        <input type="radio" name="slide" id="slide-2">
-        <input type="radio" name="slide" id="slide-3">
-        <input type="radio" name="slide" id="slide-4">
-        <input type="radio" name="slide" id="slide-5">
-        <input type="radio" name="slide" id="slide-6">
-        <input type="radio" name="slide" id="slide-7">
+        <input type="radio" name="slide" id="slide1" checked>
+        <input type="radio" name="slide" id="slide2">
+        <input type="radio" name="slide" id="slide3">
+        <input type="radio" name="slide" id="slide4">
+        <input type="radio" name="slide" id="slide5">
+        <input type="radio" name="slide" id="slide6">
+        <input type="radio" name="slide" id="slide7">
 
         <section class="slides">
 
-            <!-- SLIDE 1 -->
-            <article class="slide slide-1 capa">
+            <!-- =========================================
+                 SLIDE 1 - CAPA
+            ========================================== -->
+
+            <article class="slide slide1">
                 <div class="conteudo">
                     <span class="numero">Apresentação pessoal</span>
 
-                    <h1>Blog Pessoal<br>da Milena Bueno</h1>
+                    <h1>
+                        Blog Pessoal<br>
+                        da Milena Bueno
+                    </h1>
 
-                    <p class="subtitulo">Meu cantinho 💙</p>
+                    <p class="subtitulo">
+                        Meu cantinho 💙
+                    </p>
 
                     <span class="coracao">💙</span>
 
                     <div class="controles">
-                        <label for="slide-2" class="botao">Próximo →</label>
+                        <label for="slide2" class="botao">
+                            Próximo →
+                        </label>
                     </div>
 
                     <div class="indicadores">
-                        <label for="slide-1" class="indicador indicador-1"></label>
-                        <label for="slide-2" class="indicador indicador-2"></label>
-                        <label for="slide-3" class="indicador indicador-3"></label>
-                        <label for="slide-4" class="indicador indicador-4"></label>
-                        <label for="slide-5" class="indicador indicador-5"></label>
-                        <label for="slide-6" class="indicador indicador-6"></label>
-                        <label for="slide-7" class="indicador indicador-7"></label>
+                        <label for="slide1" class="indicador indicador1"></label>
+                        <label for="slide2" class="indicador indicador2"></label>
+                        <label for="slide3" class="indicador indicador3"></label>
+                        <label for="slide4" class="indicador indicador4"></label>
+                        <label for="slide5" class="indicador indicador5"></label>
+                        <label for="slide6" class="indicador indicador6"></label>
+                        <label for="slide7" class="indicador indicador7"></label>
                     </div>
                 </div>
             </article>
 
-            <!-- SLIDE 2 -->
-            <article class="slide slide-2">
+            <!-- =========================================
+                 SLIDE 2 - APRESENTAÇÃO
+            ========================================== -->
+
+            <article class="slide slide2">
                 <div class="conteudo">
                     <span class="numero">Slide 02</span>
 
@@ -457,24 +435,32 @@
                     </p>
 
                     <div class="controles">
-                        <label for="slide-1" class="botao">← Voltar</label>
-                        <label for="slide-3" class="botao">Próximo →</label>
+                        <label for="slide1" class="botao">
+                            ← Voltar
+                        </label>
+
+                        <label for="slide3" class="botao">
+                            Próximo →
+                        </label>
                     </div>
 
                     <div class="indicadores">
-                        <label for="slide-1" class="indicador indicador-1"></label>
-                        <label for="slide-2" class="indicador indicador-2"></label>
-                        <label for="slide-3" class="indicador indicador-3"></label>
-                        <label for="slide-4" class="indicador indicador-4"></label>
-                        <label for="slide-5" class="indicador indicador-5"></label>
-                        <label for="slide-6" class="indicador indicador-6"></label>
-                        <label for="slide-7" class="indicador indicador-7"></label>
+                        <label for="slide1" class="indicador indicador1"></label>
+                        <label for="slide2" class="indicador indicador2"></label>
+                        <label for="slide3" class="indicador indicador3"></label>
+                        <label for="slide4" class="indicador indicador4"></label>
+                        <label for="slide5" class="indicador indicador5"></label>
+                        <label for="slide6" class="indicador indicador6"></label>
+                        <label for="slide7" class="indicador indicador7"></label>
                     </div>
                 </div>
             </article>
 
-            <!-- SLIDE 3 -->
-            <article class="slide slide-3">
+            <!-- =========================================
+                 SLIDE 3 - SOBRE MIM
+            ========================================== -->
+
+            <article class="slide slide3">
                 <div class="conteudo">
                     <span class="numero">Slide 03</span>
 
@@ -493,24 +479,32 @@
                     </p>
 
                     <div class="controles">
-                        <label for="slide-2" class="botao">← Voltar</label>
-                        <label for="slide-4" class="botao">Próximo →</label>
+                        <label for="slide2" class="botao">
+                            ← Voltar
+                        </label>
+
+                        <label for="slide4" class="botao">
+                            Próximo →
+                        </label>
                     </div>
 
                     <div class="indicadores">
-                        <label for="slide-1" class="indicador indicador-1"></label>
-                        <label for="slide-2" class="indicador indicador-2"></label>
-                        <label for="slide-3" class="indicador indicador-3"></label>
-                        <label for="slide-4" class="indicador indicador-4"></label>
-                        <label for="slide-5" class="indicador indicador-5"></label>
-                        <label for="slide-6" class="indicador indicador-6"></label>
-                        <label for="slide-7" class="indicador indicador-7"></label>
+                        <label for="slide1" class="indicador indicador1"></label>
+                        <label for="slide2" class="indicador indicador2"></label>
+                        <label for="slide3" class="indicador indicador3"></label>
+                        <label for="slide4" class="indicador indicador4"></label>
+                        <label for="slide5" class="indicador indicador5"></label>
+                        <label for="slide6" class="indicador indicador6"></label>
+                        <label for="slide7" class="indicador indicador7"></label>
                     </div>
                 </div>
             </article>
 
-            <!-- SLIDE 4 -->
-            <article class="slide slide-4">
+            <!-- =========================================
+                 SLIDE 4 - MEUS GOSTOS
+            ========================================== -->
+
+            <article class="slide slide4">
                 <div class="conteudo">
                     <span class="numero">Slide 04</span>
 
@@ -520,7 +514,9 @@
 
                         <div class="card">
                             <span class="icone">📚</span>
+
                             <h3>Livros</h3>
+
                             <p>
                                 Gosto de conhecer novas histórias,
                                 personagens e mundos através dos livros.
@@ -529,7 +525,9 @@
 
                         <div class="card">
                             <span class="icone">🎧</span>
+
                             <h3>Música</h3>
+
                             <p>
                                 Adoro ouvir música nos meus momentos livres.
                             </p>
@@ -537,7 +535,9 @@
 
                         <div class="card">
                             <span class="icone">💙</span>
+
                             <h3>Azul</h3>
+
                             <p>
                                 Azul é minha cor favorita e gosto dos seus
                                 diferentes tons.
@@ -546,34 +546,43 @@
 
                         <div class="card">
                             <span class="icone">🎤</span>
+
                             <h3>Dfideliz</h3>
+
                             <p>
-                                Gosto de ouvir suas músicas e do seu estilo
-                                musical.
+                                Dfideliz é um dos meus cantores favoritos.
                             </p>
                         </div>
 
                     </div>
 
                     <div class="controles">
-                        <label for="slide-3" class="botao">← Voltar</label>
-                        <label for="slide-5" class="botao">Próximo →</label>
+                        <label for="slide3" class="botao">
+                            ← Voltar
+                        </label>
+
+                        <label for="slide5" class="botao">
+                            Próximo →
+                        </label>
                     </div>
 
                     <div class="indicadores">
-                        <label for="slide-1" class="indicador indicador-1"></label>
-                        <label for="slide-2" class="indicador indicador-2"></label>
-                        <label for="slide-3" class="indicador indicador-3"></label>
-                        <label for="slide-4" class="indicador indicador-4"></label>
-                        <label for="slide-5" class="indicador indicador-5"></label>
-                        <label for="slide-6" class="indicador indicador-6"></label>
-                        <label for="slide-7" class="indicador indicador-7"></label>
+                        <label for="slide1" class="indicador indicador1"></label>
+                        <label for="slide2" class="indicador indicador2"></label>
+                        <label for="slide3" class="indicador indicador3"></label>
+                        <label for="slide4" class="indicador indicador4"></label>
+                        <label for="slide5" class="indicador indicador5"></label>
+                        <label for="slide6" class="indicador indicador6"></label>
+                        <label for="slide7" class="indicador indicador7"></label>
                     </div>
                 </div>
             </article>
 
-            <!-- SLIDE 5 -->
-            <article class="slide slide-5">
+            <!-- =========================================
+                 SLIDE 5 - JIU-JITSU
+            ========================================== -->
+
+            <article class="slide slide5">
                 <div class="conteudo">
                     <span class="numero">Slide 05</span>
 
@@ -592,106 +601,138 @@
                     </p>
 
                     <div class="controles">
-                        <label for="slide-4" class="botao">← Voltar</label>
-                        <label for="slide-6" class="botao">Próximo →</label>
+                        <label for="slide4" class="botao">
+                            ← Voltar
+                        </label>
+
+                        <label for="slide6" class="botao">
+                            Próximo →
+                        </label>
                     </div>
 
                     <div class="indicadores">
-                        <label for="slide-1" class="indicador indicador-1"></label>
-                        <label for="slide-2" class="indicador indicador-2"></label>
-                        <label for="slide-3" class="indicador indicador-3"></label>
-                        <label for="slide-4" class="indicador indicador-4"></label>
-                        <label for="slide-5" class="indicador indicador-5"></label>
-                        <label for="slide-6" class="indicador indicador-6"></label>
-                        <label for="slide-7" class="indicador indicador-7"></label>
+                        <label for="slide1" class="indicador indicador1"></label>
+                        <label for="slide2" class="indicador indicador2"></label>
+                        <label for="slide3" class="indicador indicador3"></label>
+                        <label for="slide4" class="indicador indicador4"></label>
+                        <label for="slide5" class="indicador indicador5"></label>
+                        <label for="slide6" class="indicador indicador6"></label>
+                        <label for="slide7" class="indicador indicador7"></label>
                     </div>
                 </div>
             </article>
 
-            <!-- SLIDE 6 -->
-            <article class="slide slide-6">
+            <!-- =========================================
+                 SLIDE 6 - CANTORES FAVORITOS
+            ========================================== -->
+
+            <article class="slide slide6">
                 <div class="conteudo">
                     <span class="numero">Slide 06</span>
 
-                    <h2>Valores do Jiu-Jitsu</h2>
+                    <h2>Meus Cantores Favoritos</h2>
 
-                    <div class="valores">
+                    <div class="cards">
 
-                        <div class="valor">
-                            <h3>💪 Força</h3>
+                        <div class="card">
+                            <span class="icone">🎤</span>
+
+                            <h3>Dfideliz</h3>
+
                             <p>
-                                Os treinos ajudam no desenvolvimento da força,
-                                resistência e condicionamento.
+                                Um dos meus cantores favoritos.
                             </p>
                         </div>
 
-                        <div class="valor">
-                            <h3>🧠 Estratégia</h3>
+                        <div class="card">
+                            <span class="icone">🎶</span>
+
+                            <h3>BK</h3>
+
                             <p>
-                                O jiu-jitsu exige concentração, raciocínio
-                                e estratégia.
+                                Um dos meus cantores favoritos.
                             </p>
                         </div>
 
-                        <div class="valor">
-                            <h3>🎯 Disciplina</h3>
+                        <div class="card">
+                            <span class="icone">🎧</span>
+
+                            <h3>Costa Gold</h3>
+
                             <p>
-                                A disciplina ajuda a continuar treinando
-                                e buscando melhorar.
+                                Um dos meus cantores favoritos.
                             </p>
                         </div>
 
-                        <div class="valor">
-                            <h3>🏆 Evolução</h3>
+                        <div class="card">
+                            <span class="icone">🎵</span>
+
+                            <h3>Pumapjl</h3>
+
                             <p>
-                                Cada treino representa uma nova oportunidade
-                                de aprender e evoluir.
+                                Um dos meus cantores favoritos.
                             </p>
                         </div>
 
                     </div>
 
                     <div class="controles">
-                        <label for="slide-5" class="botao">← Voltar</label>
-                        <label for="slide-7" class="botao">Próximo →</label>
+                        <label for="slide5" class="botao">
+                            ← Voltar
+                        </label>
+
+                        <label for="slide7" class="botao">
+                            Próximo →
+                        </label>
                     </div>
 
                     <div class="indicadores">
-                        <label for="slide-1" class="indicador indicador-1"></label>
-                        <label for="slide-2" class="indicador indicador-2"></label>
-                        <label for="slide-3" class="indicador indicador-3"></label>
-                        <label for="slide-4" class="indicador indicador-4"></label>
-                        <label for="slide-5" class="indicador indicador-5"></label>
-                        <label for="slide-6" class="indicador indicador-6"></label>
-                        <label for="slide-7" class="indicador indicador-7"></label>
+                        <label for="slide1" class="indicador indicador1"></label>
+                        <label for="slide2" class="indicador indicador2"></label>
+                        <label for="slide3" class="indicador indicador3"></label>
+                        <label for="slide4" class="indicador indicador4"></label>
+                        <label for="slide5" class="indicador indicador5"></label>
+                        <label for="slide6" class="indicador indicador6"></label>
+                        <label for="slide7" class="indicador indicador7"></label>
                     </div>
                 </div>
             </article>
 
-            <!-- SLIDE 7 -->
-            <article class="slide slide-7 final">
+            <!-- =========================================
+                 SLIDE 7 - ENCERRAMENTO
+            ========================================== -->
+
+            <article class="slide slide7">
                 <div class="conteudo">
                     <span class="numero">Encerramento</span>
 
-                    <h2>Obrigada por conhecer<br>um pouco sobre mim!</h2>
+                    <h2>
+                        Obrigada por conhecer<br>
+                        um pouco sobre mim!
+                    </h2>
 
                     <p class="subtitulo">
                         Feito por Milena Bueno 💙
                     </p>
 
                     <div class="controles">
-                        <label for="slide-6" class="botao">← Voltar</label>
-                        <label for="slide-1" class="botao">Voltar ao início</label>
+                        <label for="slide6" class="botao">
+                            ← Voltar
+                        </label>
+
+                        <label for="slide1" class="botao">
+                            Voltar ao início
+                        </label>
                     </div>
 
                     <div class="indicadores">
-                        <label for="slide-1" class="indicador indicador-1"></label>
-                        <label for="slide-2" class="indicador indicador-2"></label>
-                        <label for="slide-3" class="indicador indicador-3"></label>
-                        <label for="slide-4" class="indicador indicador-4"></label>
-                        <label for="slide-5" class="indicador indicador-5"></label>
-                        <label for="slide-6" class="indicador indicador-6"></label>
-                        <label for="slide-7" class="indicador indicador-7"></label>
+                        <label for="slide1" class="indicador indicador1"></label>
+                        <label for="slide2" class="indicador indicador2"></label>
+                        <label for="slide3" class="indicador indicador3"></label>
+                        <label for="slide4" class="indicador indicador4"></label>
+                        <label for="slide5" class="indicador indicador5"></label>
+                        <label for="slide6" class="indicador indicador6"></label>
+                        <label for="slide7" class="indicador indicador7"></label>
                     </div>
                 </div>
             </article>
