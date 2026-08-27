@@ -1,3 +1,7 @@
+/* =================================
+   CONFIGURAÇÕES GERAIS
+================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -9,7 +13,17 @@ html {
 }
 
 body {
-    background-color: #050505;
+    /* FUNDO VERMELHO VINHO */
+    background: linear-gradient(
+        135deg,
+        #18040a,
+        #4a0b1c,
+        #260711,
+        #120207
+    );
+
+    background-attachment: fixed;
+
     color: #eeeeee;
 
     font-family: "Poppins", sans-serif;
@@ -18,9 +32,9 @@ body {
 }
 
 
-/* =========================
+/* =================================
    CABEÇALHO
-========================= */
+================================= */
 
 header {
     min-height: 420px;
@@ -36,11 +50,11 @@ header {
 
     background:
         linear-gradient(
-            rgba(0, 0, 0, 0.75),
-            rgba(0, 8, 18, 0.95)
+            rgba(15, 0, 5, 0.75),
+            rgba(30, 2, 12, 0.95)
         );
 
-    border-bottom: 1px solid #164b70;
+    border-bottom: 1px solid #7a1d3a;
 }
 
 header h1 {
@@ -48,26 +62,26 @@ header h1 {
 
     font-size: 70px;
 
-    color: #75caff;
+    color: #f0a5bb;
 
     letter-spacing: 3px;
 
     text-shadow:
-        0 0 15px rgba(70, 170, 255, 0.4);
+        0 0 15px rgba(220, 70, 120, 0.4);
 }
 
 header p {
     font-size: 19px;
 
-    color: #b8c7d2;
+    color: #d8b9c3;
 
     margin: 5px 0 30px;
 }
 
 
-/* =========================
+/* =================================
    MENU
-========================= */
+================================= */
 
 nav {
     display: flex;
@@ -86,13 +100,13 @@ nav a {
 }
 
 nav a:hover {
-    color: #69c5ff;
+    color: #f09ab5;
 }
 
 
-/* =========================
+/* =================================
    CONTEÚDO
-========================= */
+================================= */
 
 main {
     width: 90%;
@@ -111,7 +125,7 @@ h2 {
 
     text-align: center;
 
-    color: #78caff;
+    color: #eda0b8;
 
     font-size: 42px;
 
@@ -119,25 +133,25 @@ h2 {
 }
 
 
-/* =========================
+/* =================================
    SOBRE MIM
-========================= */
+================================= */
 
 .sobre {
-    background-color: #0b0b0b;
+    background-color: rgba(15, 5, 9, 0.9);
 
     padding: 45px;
 
     border-radius: 20px;
 
-    border: 1px solid #173b54;
+    border: 1px solid #652038;
 
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.6);
+        0 10px 30px rgba(0, 0, 0, 0.7);
 }
 
 .sobre p {
-    color: #cccccc;
+    color: #d5d0d2;
 
     font-size: 17px;
 
@@ -147,13 +161,13 @@ h2 {
 }
 
 strong {
-    color: #71c8ff;
+    color: #f09ab5;
 }
 
 
-/* =========================
-   CARDS
-========================= */
+/* =================================
+   CARDS DOS GOSTOS
+================================= */
 
 .cards {
     display: grid;
@@ -165,7 +179,7 @@ strong {
 }
 
 .card {
-    background-color: #0b0b0b;
+    background-color: rgba(12, 5, 8, 0.92);
 
     padding: 35px 20px;
 
@@ -173,7 +187,7 @@ strong {
 
     border-radius: 18px;
 
-    border: 1px solid #1b3547;
+    border: 1px solid #542032;
 
     transition: 0.35s;
 }
@@ -181,10 +195,10 @@ strong {
 .card:hover {
     transform: translateY(-10px);
 
-    border-color: #3c9bd1;
+    border-color: #a8395c;
 
     box-shadow:
-        0 10px 30px rgba(0, 120, 200, 0.15);
+        0 10px 30px rgba(170, 30, 80, 0.2);
 }
 
 .card span {
@@ -200,42 +214,42 @@ strong {
 
     font-size: 28px;
 
-    color: #79caff;
+    color: #eda0b8;
 
     margin-bottom: 12px;
 }
 
 .card p {
-    color: #bdbdbd;
+    color: #c8c1c4;
 
     font-size: 15px;
 }
 
 
-/* =========================
+/* =================================
    JIU-JITSU
-========================= */
+================================= */
 
 .jiujitsu {
     background:
         linear-gradient(
             145deg,
-            #0b0b0b,
-            #06090c
+            rgba(18, 5, 10, 0.95),
+            rgba(8, 2, 5, 0.98)
         );
 
     padding: 50px;
 
     border-radius: 22px;
 
-    border: 1px solid #1d5578;
+    border: 1px solid #76243f;
 
     box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.7);
+        0 15px 40px rgba(0, 0, 0, 0.8);
 }
 
 .jiujitsu > p {
-    color: #cccccc;
+    color: #d0c9cc;
 
     font-size: 17px;
 
@@ -245,9 +259,9 @@ strong {
 }
 
 
-/* =========================
+/* =================================
    CARDS DO JIU-JITSU
-========================= */
+================================= */
 
 .jiu-boxes {
     display: grid;
@@ -261,21 +275,21 @@ strong {
 }
 
 .jiu-boxes div {
-    background-color: #0d0d0d;
+    background-color: rgba(15, 5, 9, 0.95);
 
     padding: 25px;
 
     border-radius: 15px;
 
-    border-left: 4px solid #2588bd;
+    border-left: 4px solid #9b3155;
 
     transition: 0.3s;
 }
 
 .jiu-boxes div:hover {
-    background-color: #111111;
+    background-color: #18080e;
 
-    border-left-color: #70c9ff;
+    border-left-color: #f09ab5;
 
     transform: translateX(5px);
 }
@@ -283,7 +297,7 @@ strong {
 .jiu-boxes h3 {
     font-family: "Playfair Display", serif;
 
-    color: #7ccaff;
+    color: #eda0b8;
 
     font-size: 25px;
 
@@ -291,46 +305,47 @@ strong {
 }
 
 .jiu-boxes p {
-    color: #bdbdbd;
+    color: #c8c1c4;
 
     font-size: 15px;
 }
 
 
-/* =========================
+/* =================================
    RODAPÉ
-========================= */
+================================= */
 
 footer {
     text-align: center;
 
     padding: 30px;
 
-    background-color: #020202;
+    background-color: rgba(5, 0, 2, 0.95);
 
-    border-top: 1px solid #164b70;
+    border-top: 1px solid #70203b;
 
-    color: #8f9da7;
+    color: #b9a5ac;
 
     font-size: 14px;
 }
 
 
-/* =========================
+/* =================================
    TABLET
-========================= */
+================================= */
 
 @media (max-width: 900px) {
 
     .cards {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+            repeat(2, 1fr);
     }
 }
 
 
-/* =========================
+/* =================================
    CELULAR
-========================= */
+================================= */
 
 @media (max-width: 600px) {
 
